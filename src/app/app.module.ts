@@ -19,6 +19,7 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { AuthEffects } from './shared/store/auth.effects';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { environment } from '../environments/environment';
     LayoutModule,
     StoreModule.forRoot(ROOT_REDUCERS),
     StoreRouterConnectingModule.forRoot(),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([AuthEffects]),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,
